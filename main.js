@@ -1,5 +1,15 @@
 const fs = require('fs');
+const http=require('http');
 
+const server=http.createServer((req,res)=>{
+console.log('Hello, World!');
+res.write('Hello, World!')
+printFileContents('./output.txt');
+res.end();
+});
+server.listen(3000,'localhost',()=>{
+  console.log('Listening to port 3000')
+});
 function printFileContents(filePath) {
   // TODO: Use fs.readFile to read the file contents
   if(fs.existsSync(filePath)){
@@ -15,4 +25,3 @@ function printFileContents(filePath) {
 }
 
 // TODO: Call printFileContents with the command-line argument
-printFileContents('./output.txt')
