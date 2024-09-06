@@ -20,7 +20,7 @@ function printFileContents(filePath) {
       console.log(data);
     });
   }else{
-    console.log(`No such file exists`);
+    console.log(`Column '${filePath}' not found in the CSV`);
   }
 }
 
