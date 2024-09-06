@@ -20,7 +20,7 @@ function printFileContents(filePath) {
       console.log(data);
     });
   }else{
-    console.log(`Column ss'${filePath}' not found in the CSV`);
+    console.log(`Column ${filePath} not found in the CSV`);
   }
 }
 
@@ -29,5 +29,5 @@ const filePath=process.argv[2];
 if(filePath){
   printFileContents(filePath);
 }else{
-  console.log(`Column '${filePath}' not found in the CSV`);
+  console.log(`Column ${filePath} not found in the CSV`);
 }
