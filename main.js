@@ -2,7 +2,7 @@ const fs = require('fs');
 function printFileContents(filePath) {
   // TODO: Use fs.readFile to read the file contents
   if(fs.existsSync(filePath)){
-    fs.readFile(filePath,'utf8',(err,data)=>{
+    fs.readFileSync(filePath,'utf8',(err,data)=>{
       if(err){
        return console.error(err);
       }
