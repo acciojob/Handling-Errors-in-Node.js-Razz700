@@ -1,5 +1,5 @@
 {
-  "name": "Handling-Errors-in-Node.js",
+  "name": "Error-Handling-in-Node.js",
   "version": "1.0.0",
   "description": "Starter package.json template",
   "main": "main.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/acciojob/Handling-Errors-in-Node.js.git"
+    "url": "git+https://github.com/acciojob/Error-Handling-in-Node.js.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/acciojob/Handling-Errors-in-Node.js/issues"
+    "url": "https://github.com/acciojob/Error-Handling-in-Node.js/issues"
   },
-  "homepage": "https://github.com/acciojob/Handling-Errors-in-Node.js#readme",
+  "homepage": "https://github.com/acciojob/Error-Handling-in-Node.js#readme",
   "devDependencies": {
     "jest": "^29.5.0"
   },
