@@ -4,12 +4,12 @@ function printFileContents(filePath) {
   if(fs.existsSync(filePath)){
     fs.readFile(filePath,'utf8',(err,data)=>{
       if(err){
-       return console.error(`Error reading file: ${err.message}`);
+        console.error(`Error reading file: ${err.message}`);
       }
-     return console.log(data);
+      console.log(data);
     });
   }else{
-   return console.log(`Column ${filePath} not found in the CSV`);
+   console.log(`Column ${filePath} not found in the CSV`);
   }
 }
 module.exports={printFileContents}
@@ -18,7 +18,7 @@ const filePath=process.argv[2];
 if(filePath){
   printFileContents(filePath);
 }else{
-  console.log(`'Error: No file path provided.'`);
+  console.log(`Column ${filePath} not found in the CSV`);
 }
 ////////////////////////////////////////////////////////////
 
