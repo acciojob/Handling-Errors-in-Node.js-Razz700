@@ -4,13 +4,13 @@ function printFileContents(filePath) {
   if(fs.existsSync('./output.txt')){
     fs.readFile(filePath,'utf8',(err,data)=>{
       if(err){
-        console.log(`Error reading file: ${err.message}`);
+       return console.log(`Error reading file: ${err.message}`);
       }
       console.log(data.toString());
     });
 }else{
-  console.log('File does not exist!!');
-  
+ // console.log('File does not exist!!');
+ console.log(`Column '${columnName}' not found in the CSV.`);
 }   
 }
 
