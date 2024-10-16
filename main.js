@@ -10,7 +10,8 @@ function printFileContents(filePath) {
     });
 }else{
  // console.log('File does not exist!!');
- console.log(`Column '${columnName}' not found in the CSV.`);
+ console.log(`Column
+  '${columnName}' not found in the CSV.`);
 }   
 }
 
@@ -19,7 +20,9 @@ const columnName=process.argv[2];
 if(columnName){
   printFileContents(columnName);
 }else{
-  console.log(`Column '${columnName}' not found in the CSV.`);
+  console.log(`Column
+    '${columnName}' not found in the CSV.`);
+  process.exit(1);
 }
 ////////////////////////////////////////////////////////////
 
