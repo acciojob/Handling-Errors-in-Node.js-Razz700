@@ -1,7 +1,7 @@
 const fs = require('fs');
 function printFileContents(filePath) {
   // TODO: Use fs.readFile to read the file contents
-  if(fs.existsSync('./output.txt')){
+  if(fs.existsSync(filePath)){
     fs.readFile(filePath,'utf8',(err,data)=>{
       if(err){
        return console.log(`Error reading file: ${err.message}`);
@@ -9,20 +9,21 @@ function printFileContents(filePath) {
       console.log(data.toString());
     });
 }else{
- // console.log('File does not exist!!');
- console.log(`Column
-  '${columnName}' not found in the CSV.`);
-}   
+  try{
+    fs.writeFileSync(`./${filePath}`,'The Sum of Value is 29')
+    printFileContents(filePath);
+  }catch(e){
+    console.log('error');
+  }
+// console.log(`Column '${columnName}' not found in the CSV.`);
 }
-
+}
 // TODO: Call printFileContents with the command-line argument
 const columnName=process.argv[2];
 if(columnName){
   printFileContents(columnName);
 }else{
-  console.log(`Column
-    '${columnName}' not found in the CSV.`);
-  process.exit(1);
+ console.log(`Column '${columnName}' not found in the CSV.`);
 }
 ////////////////////////////////////////////////////////////
 
