@@ -1,18 +1,14 @@
 const fs = require('fs');
 function printFileContents(filePath) {
   // TODO: Use fs.readFile to read the file contents
-  if(fs.existsSync(filePath)){
     fs.readFile(filePath,'utf8',(err,data)=>{
       if(err){
-        console.error(`Error reading file: ${err.message}`);
+        console.log(`Error reading file: ${err.message}`);
       }
-      console.log(data);
+      console.log(data.toString());
     });
-  }else{
-   console.log(`Column '${filePath}' not found in the CSV`);
-  }
 }
-module.exports={printFileContents}
+
 // TODO: Call printFileContents with the command-line argument
 const filePath=process.argv[2];
 if(filePath){
