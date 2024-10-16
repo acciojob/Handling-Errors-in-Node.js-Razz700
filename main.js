@@ -9,13 +9,15 @@ function printFileContents(filePath) {
       console.log(data.toString());
     });
 }else{
-  try{
-    fs.writeFileSync(`./${filePath}`,'The Sum of Value is 29')
-    printFileContents(filePath);
-  }catch(e){
-    console.log('error');
-  }
-// console.log(`Column '${columnName}' not found in the CSV.`);
+  console.log('File does not exists.');
+  
+  // try{
+  //   fs.writeFileSync(`./${filePath}`,'The Sum of Value is 29')
+  //   printFileContents(filePath);
+  // }catch(e){
+  //   console.log('error');
+  // }
+//console.log(`Column '${columnName}' not found in the CSV.`);
 }
 }
 // TODO: Call printFileContents with the command-line argument
@@ -23,7 +25,7 @@ const columnName=process.argv[2];
 if(columnName){
   printFileContents(columnName);
 }else{
- console.log(`Column '${columnName}' not found in the CSV.`);
+ console.log(`Please provide a file path as a command-line argument.`);
 }
 ////////////////////////////////////////////////////////////
 
