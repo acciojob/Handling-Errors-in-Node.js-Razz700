@@ -1,34 +1,49 @@
-const fs = require('fs');
-function printFileContents(filePath) {
-  // TODO: Use fs.readFile to read the file contents
-  if(fs.existsSync(filePath)){
-    fs.readFile(filePath,'utf8',(err,data)=>{
-      if(err){
-       return console.log(`Error reading file: ${err.message}`);
-      }
-      console.log(data.toString());
-    });
-}else{
-  console.log('File does not exists.');
+// const fs = require('fs');
+// function printFileContents(filePath) {
+//   // TODO: Use fs.readFile to read the file contents
+//   if(fs.existsSync(filePath)){
+//     fs.readFile(filePath,'utf8',(err,data)=>{
+//       if(err){
+//        return console.log(`Error reading file: ${err.message}`);
+//       }
+//       console.log(data.toString());
+//     });
+// }else{
+//   console.log('File does not exists.');
   
-  // try{
-  //   fs.writeFileSync(`./${filePath}`,'The Sum of Value is 29')
-  //   printFileContents(filePath);
-  // }catch(e){
-  //   console.log('error');
-  // }
-//console.log(`Column '${columnName}' not found in the CSV.`);
-}
-}
-// TODO: Call printFileContents with the command-line argument
-const columnName=process.argv[2];
-if(columnName){
-  printFileContents(columnName);
-}else{
- console.log(`Please provide a file path as a command-line argument.`);
-}
+//   // try{
+//   //   fs.writeFileSync(`./${filePath}`,'The Sum of Value is 29')
+//   //   printFileContents(filePath);
+//   // }catch(e){
+//   //   console.log('error');
+//   // }
+// //console.log(`Column '${columnName}' not found in the CSV.`);
+// }
+// }
+// // TODO: Call printFileContents with the command-line argument
+// const columnName=process.argv[2];
+// if(columnName){
+//   printFileContents(columnName);
+// }else{
+//  console.log(`Please provide a file path as a command-line argument.`);
+// }
 ////////////////////////////////////////////////////////////
+const fs = require("fs");
 
+const filePath = process.argv[2];
+
+if (!filePath) {
+  console.error("an error occured!");
+  process.exit(1);
+}
+
+fs.readFile(filePath,'utf-8', (err, data) => {
+  if (err) {
+    console.error(`an error occured: ${err.message}`);
+  } else {
+    console.log(data);
+  }
+});
 
 ////////////////////////////////////////////////////////////
 // const fs = require("fs");
