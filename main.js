@@ -29,17 +29,14 @@
 // }
 ////////////////////////////////////////////////////////////
 const fs = require("fs");
-
 const filePath = process.argv[2];
-
 if (!filePath) {
-  console.error("an error occured!");
+  console.log("Usage: node print.js <file_path>");
   process.exit(1);
 }
-
-fs.readFile(filePath,'utf-8', (err, data) => {
+fs.readFile(filePath,'utf8', (err, data) => {
   if (err) {
-    console.error(`an error occured: ${err.message}`);
+    console.log(`Error: ${err.message}`);
   } else {
     console.log(data);
   }
